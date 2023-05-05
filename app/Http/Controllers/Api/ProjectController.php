@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class ProjectController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of projects.
      */
     public function index()
     {
@@ -18,34 +18,11 @@ class ProjectController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a project.
      */
-    public function store(Request $request)
+    public function getProject($id)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $post = Project::findOrFail($id);
+        return $post;
     }
 }
